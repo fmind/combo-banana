@@ -34,7 +34,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 - Python 3.13+
 - [uv](https://github.com/astral-sh/uv) (a fast Python package installer and resolver)
-- [just](https://github.com/casey/just) (a handy command runner)
+- [just](https://github.com/casey/just) (a handy command runner for automating tasks)
 
 ### Installation
 
