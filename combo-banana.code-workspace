@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"python.defaultInterpreterPath": ".venv/bin/python",
+		"python.testing.pytestEnabled": true,
+		"python.testing.pytestArgs": [
+			"test_app.py"
+		],
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": "explicit"
+			},
+			"editor.defaultFormatter": "charliermarsh.ruff",
+		},
+	},
+	"extensions": {
+		"recommendations": [
+			"astral-sh.ty",
+			"charliermarsh.ruff",
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"nefrob.vscode-just-syntax",
+		]
+	}
+}
