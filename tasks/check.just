@@ -21,5 +21,3 @@ check-test:
 [group('check')]
 check-type:
     uv run ty check {{SOURCES}} {{TESTS}}
-
-
