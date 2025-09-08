@@ -1,0 +1,36 @@
+graph TD
+    subgraph "User Interaction"
+        direction LR
+        User[fa:fa-user User] --> UI{Gradio Web Interface}
+    end
+
+    subgraph "Backend on Google Cloud Run"
+        direction TB
+        subgraph "Workflow Execution Loop"
+            direction LR
+            Backend[Backend Logic - Python] -- "Sends Image + Step Prompt" --> AIEngine[AI Engine - Nano Banana]
+            AIEngine -- "Returns Processed Image" --> Backend
+        end
+        Chatbot[Workflow Definition Chatbot - Gemini 2.5 Flash]
+    end
+
+    UI -- "Defines Workflow via Chat" --> Chatbot
+    Chatbot -- "Generates" --> Workflow[(Workflow Steps - JSON)]
+
+    UI -- "Uploads Image" --> SourceImage(fa:fa-image Source Image)
+
+    Workflow -- "Input" --> Backend
+    SourceImage -- "Initial Input" --> Backend
+
+    Backend -- "Final Result" --> OutputGallery{Output Gallery}
+    OutputGallery --> UI
+
+    classDef ui fill:#f9f,stroke:#333,stroke-width:2px
+    classDef backend fill:#e6f2ff,stroke:#333,stroke-width:2px
+    classDef ai fill:#ccf,stroke:#333,stroke-width:2px
+    classDef data fill:#afa,stroke:#333,stroke-width:2px
+
+    class User,UI ui
+    class Backend,Chatbot backend
+    class AIEngine ai
+    class Workflow,SourceImage,OutputGallery data
